@@ -1,16 +1,16 @@
 //es pot importar i exportar els components
-Vue.component('RecuperaParaules', {
+/*Vue.component('RecuperaParaules', {
  
   resultats: [],
   methods: {
     cercar: function() {
       axios
-        .get(`172.20.17.148:3000/recuperarParaules`)
+        .get(`localhost:3000/recuperarParaules`)
         .then(response => {
           this.resultats = response.data;
         });
     }
-  },
+  }
   template: `
       <div>
       <button click= v-on:click="cercar" >iniciar</button>
@@ -21,7 +21,7 @@ Vue.component('RecuperaParaules', {
       </ul>
       </div>
       `
-});
+});,*/
 
 var app = new Vue({
   el: '#app',
@@ -29,14 +29,13 @@ var app = new Vue({
     cadenaCerca: '',
     resultats: []
   },
-
-
   methods: {
     cercar: function() {
       axios
-        .get(`http://172.20.17.148:3000/recuperarParaules`)
+        .get(`http://localhost:3000/recuperarParaules`)
         .then(response => {
           this.resultats = response.data;
+          emmagatzematge.desar('llistaparaules',JSON.stringify(this.resultats));
         });
     }
   },
@@ -44,8 +43,8 @@ var app = new Vue({
       <div>
       <button v-on:click="cercar">iniciar</button>
       <ul>
-        <li v-for="resultat in resultats.results">
-          {{resultat.name}} {{resultat.model}}
+        <li v-for="resultat in resultats">
+          {{resultat}}
         </li>
       </ul>
       </div>

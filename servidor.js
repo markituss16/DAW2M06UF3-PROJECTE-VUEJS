@@ -1,5 +1,17 @@
 const express = require('express');
+var cors = require('cors');
 const app = express();
+
+app.use(cors());
+
+app.use(function(req,res,next){
+    res.setHeader('Access-Control-Allow-Origin', '*');
+		res.setHeader('Access-Control-Request-Method', '*');
+		res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+		res.setHeader('Access-Control-Allow-Headers', '*');
+    next();
+}
+);
 
 var paraules = [
     'pilota',
@@ -12,6 +24,8 @@ var paraules = [
 ];
 
 app.get("/recuperarParaules", (req,res) => {
+    
+   
     let n=5;
     let shuffleArray = paraules.sort(() => Math.random() - Math.random());
     let randomWords = shuffleArray.slice(0, n);
