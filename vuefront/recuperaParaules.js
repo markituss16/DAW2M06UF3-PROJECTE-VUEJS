@@ -1,31 +1,6 @@
 //es pot importar i exportar els components
-/*Vue.component('RecuperaParaules', {
- 
-  resultats: [],
-  methods: {
-    cercar: function() {
-      axios
-        .get(`localhost:3000/recuperarParaules`)
-        .then(response => {
-          this.resultats = response.data;
-        });
-    }
-  }
-  template: `
-      <div>
-      <button click= v-on:click="cercar" >iniciar</button>
-      <ul>
-        <li v-for="resultat in resultats.results">
-          {{resultat.name}} {{resultat.model}}
-        </li>
-      </ul>
-      </div>
-      `
-});,*/
-
-var app = new Vue({
-  el: '#app',
-  data: {
+const RecuperaParaules=Vue.component('RecuperaParaules', {
+  props: {
     cadenaCerca: '',
     resultats: []
   },
@@ -50,3 +25,14 @@ var app = new Vue({
       </div>
       `
 });
+
+var app = new Vue({
+  el: '#app',
+  components:{
+    'RecuperaParaules':RecuperaParaules,
+  },
+  template: `
+        <RecuperaParaules/>
+      `
+});
+
