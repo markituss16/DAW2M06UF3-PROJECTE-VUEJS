@@ -1,5 +1,5 @@
 //es pot importar i exportar els components
-const RecuperaParaules=Vue.component('RecuperaParaules', {
+var RecuperaParaules=Vue.component('RecuperaParaules', {
   props: {
     cadenaCerca: '',
     resultats: []
@@ -26,13 +26,4 @@ const RecuperaParaules=Vue.component('RecuperaParaules', {
       `
 });
 
-var app = new Vue({
-  el: '#app',
-  components:{
-    'RecuperaParaules':RecuperaParaules,
-  },
-  template: `
-        <RecuperaParaules/>
-      `
-});
-
+export {RecuperaParaules};

@@ -1,8 +1,10 @@
+import {RecuperaParaules} from './recuperaParaules.js';
+
 const inici = {template: `
-    <inici></inici>
+    <home></home>
 `};
 
-const game = {template: `
+const recuperar = {template: `
     <partida></partida>
 `}
 
@@ -12,8 +14,7 @@ const finalGame = {template: `
 
 const rutes = {
     '': inici,
-    '#/': RecuperaParaules,
-    '#/game': game,
+    '#/': recuperar,
     '#/finalGame': finalGame
 };
 
@@ -50,19 +51,18 @@ var home = Vue.component('home', {
     },
 
     template: `
-    <nav class="navbar navbar-dark bg-primary">
-        <div class="collapse navbar-collapse" id="navbarNavDropdown" v-on:click="navegar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="">Inici</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/game">Joc</a>
-                </li>
-            </ul>
+    <div>
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup" v-on:click="navegar">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="">Inici</a>
+                        <a class="nav-link" href="#/game">Joc</a>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </nav>
-    <div v-bind:is="vistaActual"></div>
+    </div>
     `
 });
 
