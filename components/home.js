@@ -1,11 +1,11 @@
-import {RecuperaParaules} from './recuperaParaules.js';
+import {juego} from './juego.js';
 
 const inici = {template: `
     <home></home>
 `};
 
-const recuperar = {template: `
-    <partida></partida>
+const game = {template: `
+   <p>hola</p>
 `}
 
 const finalGame = {template: `
@@ -14,7 +14,7 @@ const finalGame = {template: `
 
 const rutes = {
     '': inici,
-    '#/': recuperar,
+    '#/game': game,
     '#/finalGame': finalGame
 };
 
@@ -32,7 +32,7 @@ const error = {
     `
   };
 
-var home = Vue.component('home', {
+var home = new('home', {
     data: function() {
         return {
             rutaActual: window.location.hash,
@@ -52,16 +52,22 @@ var home = Vue.component('home', {
 
     template: `
     <div>
-        <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup" v-on:click="navegar">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="">Inici</a>
-                        <a class="nav-link" href="#/game">Joc</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
+      <ul>
+        <li>
+          <a href="" 
+            v-on:click="navegar">
+              Principal
+          </a>
+        </li>
+        <li>
+          <a href="#/game" 
+            v-on:click="navegar">
+              Game
+          </a>
+        </li>
+      </ul>
+      <div v-bind:is="vistaActual">        
+      </div>
     </div>
     `
 });

@@ -1,6 +1,5 @@
 import {home} from './components/home.js';
-import {RecuperaParaules} from './components/recuperaParaules.js';
-
+import {juego} from './components/juego.js';
 var app = new Vue({
     el: '#app',
     data: {},
