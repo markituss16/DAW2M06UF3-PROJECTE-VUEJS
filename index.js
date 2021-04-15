@@ -1,14 +1,12 @@
 import {home} from './components/home.js';
-import {RecuperaParaules} from './components/recuperaParaules.js';
+import {juego} from './components/juego.js';
 
 var app = new Vue({
     el: '#app',
     data: {},
     template: `
         <div>
-            <script type="application/javascript" src="localstorage.js"></script>
             <home></home>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         </div>
       `
   });

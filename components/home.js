@@ -1,11 +1,12 @@
-import {RecuperaParaules} from './recuperaParaules.js';
+import {juego} from './juego.js';
+import {inicial} from './inicial.js';
 
 const inici = {template: `
-    <home></home>
+    <inicial></inicial>
 `};
 
-const recuperar = {template: `
-    <partida></partida>
+const game = {template: `
+    <Partida></Partida>
 `}
 
 const finalGame = {template: `
@@ -14,7 +15,7 @@ const finalGame = {template: `
 
 const rutes = {
     '': inici,
-    '#/': recuperar,
+    '#/game': game,
     '#/finalGame': finalGame
 };
 
@@ -62,6 +63,7 @@ var home = Vue.component('home', {
                 </div>
             </nav>
         </div>
+        <div v-bind:is="vistaActual"></div>
     </div>
     `
 });
