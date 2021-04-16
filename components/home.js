@@ -1,12 +1,9 @@
-import {juego} from './juego.js';
-import {inicial} from './inicial.js';
-
 const inici = {template: `
     <inicial></inicial>
 `};
 
 const game = {template: `
-    <Partida></Partida>
+    <WordSearch></WordSearch>
 `}
 
 const finalGame = {template: `

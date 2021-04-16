@@ -17,13 +17,19 @@ var paraules = [
     'ordinador',
     'ratoli',
     'finestra',
-    'cadira'
+    'cadira',
+    'tisora',
+    'pantalla',
+    'muntanya',
+    'vaca',
+    'cotxe',
+    'vaixell',
+    'bicicleta',
+    'patata'
 ];
 
-app.get("/recuperarParaules", (req,res) => {
-    
-   
-    let n=5;
+app.get("/recuperarParaules", (req,res) => {  
+    let n=10;
     let shuffleArray = paraules.sort(() => Math.random() - Math.random());
     let randomWords = shuffleArray.slice(0, n);
     res.send(randomWords);

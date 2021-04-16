@@ -1,0 +1,181 @@
+:root{
+	--bg-smoke:rgba(36,36,36,0.85) ;
+}
+
+
+.bg-smoke{
+	background-color: var(--bg-smoke);
+}
+html,body{
+	
+	min-height: 360px;
+	min-width: 300px;
+}
+
+.palabra
+{
+	text-align: center;
+	display: inline-block;
+	color:white;
+	min-width: 100px;
+	margin:4px;
+	font-size: 20px;
+	
+}
+
+.content-lets
+{
+	background-color: #E1E1E1;
+	border: 1px solid black;
+	display: inline-block;
+
+}
+
+.let-row
+{
+	display: flex;
+	width: 100%;
+	height: 5%;
+	font-size: 25px;
+}
+
+.let-cell
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	font-size: 25px;
+	width: 30px;
+	height: 30px;
+}
+
+
+.let-mar
+{
+	color: white;
+	text-shadow: 0 0 4px #161616;
+}
+.let-sel
+{
+	background-color: #242424 !important;
+	color: white;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:visited
+{
+	color: inherit;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.color-enter-active,
+.color-leave-active {
+  transition: color 3s;
+}
+.color-enter,
+.color-leave-to {
+  color: #d30000;
+}
+
+.fons-enter-active,
+.fons-leave-active {
+  transition: background-color 3s;
+}
+.fons-enter,
+.fons-leave-to {
+  background-color: #3bffd5;
+}
+
+@-moz-keyframes roda { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes roda { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes roda { 100% { transform:rotate(360deg); } }
+
+.rotating {
+	-webkit-animation:roda 4s linear infinite;
+    -moz-animation:roda 4s linear infinite;
+    animation:roda 4s linear infinite;
+}
+
+@keyframes shake {
+	0% { transform: translate(1px, 1px) rotate(0deg); }
+	10% { transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { transform: translate(-3px, 0px) rotate(1deg); }
+	30% { transform: translate(3px, 2px) rotate(0deg); }
+	40% { transform: translate(1px, -1px) rotate(1deg); }
+	50% { transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { transform: translate(-3px, 1px) rotate(0deg); }
+	70% { transform: translate(3px, 1px) rotate(-1deg); }
+	80% { transform: translate(-1px, -1px) rotate(1deg); }
+	90% { transform: translate(1px, 2px) rotate(0deg); }
+	100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+@-moz-keyframes shake {
+	0% { -moz-transform: translate(1px, 1px) rotate(0deg); }
+	10% { -moz-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -moz-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -moz-transform: translate(3px, 2px) rotate(0deg); }
+	40% { -moz-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -moz-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -moz-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -moz-transform: translate(3px, 1px) rotate(-1deg); }
+	80% { -moz-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -moz-transform: translate(1px, 2px) rotate(0deg); }
+	100% { -moz-transform: translate(1px, -2px) rotate(-1deg); }
+}
+@-webkit-keyframes shake {
+	0% { -webkit-transform: translate(1px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(3px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(3px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(1px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+.shake {
+	-webkit-animation: shake 0.5s infinite;
+	-moz-animation: shake 0.5s infinite;
+	animation: shake 0.5s infinite;
+}
+
+@keyframes shrink {
+	0% { transform: scale(1); }
+	50% { transform: scale(1.5); }
+	100% { transform: scale(1); }
+}
+
+@-webkit-keyframes shrink {
+	0% { -webkit-transform: scale(1); }
+	50% { -webkit-transform: scale(1.5); }
+	100% { -webkit-transform: scale(1); }
+}
+
+@-moz-keyframes shrink {
+	0% { -moz-transform: scale(1); }
+	50% { -moz-transform: scale(1.5); }
+	100% { -moz-transform: scale(1); }
+}
+
+.shrink {
+	-webkit-animation: shrink 1s infinite;
+	-moz-animation: shrink 1s infinite;
+	animation: shrink 1s infinite;
+}
