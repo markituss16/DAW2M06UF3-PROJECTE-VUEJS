@@ -283,7 +283,7 @@ var wordSearch = Vue.component("WordSearch",{
     template: `
     <div style="display: flex; justify-content: center; align-items: center; margin-top: 2%;">
     <span class="">
-        <transition name="fade" appear>
+        <transition name="slide-fade" appear>
             <div style="display: inline-block;" v-if="!sopaCompletada" class="row m-0 pb-3">
                 <div>
                     <WordsArray 
