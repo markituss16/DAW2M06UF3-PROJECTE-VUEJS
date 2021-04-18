@@ -12,6 +12,11 @@ html,body{
 	min-width: 300px;
 }
 
+
+label{ 
+	color:white;
+}
+
 .palabra
 {
 	text-align: center;
@@ -22,6 +27,7 @@ html,body{
 	font-size: 20px;
 	
 }
+
 
 .content-lets
 {

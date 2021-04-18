@@ -1,7 +1,7 @@
 var wordList = Vue.component("WordList",{
 	data: function(){
         return {
-          show: true
+          show: false
         }
       },
 	name: 'WordList',

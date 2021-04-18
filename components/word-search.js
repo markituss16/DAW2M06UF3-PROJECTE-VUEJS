@@ -1,3 +1,5 @@
+import { Users } from "../class/user.js";
+
 var wordSearch = Vue.component("WordSearch",{
 	data: function(){
 		return {
@@ -10,12 +12,23 @@ var wordSearch = Vue.component("WordSearch",{
 			palabras: [],
 			tam: 15,
 			tamax:8,
+			errors: [],
+			username: null,
+			User:Users
 		}
 	},
 	methods:{
 		finalizarJuego: function()
 		{
-			setTimeout(() => window.location.href = 'http://localhost:5500/', 1500);
+			setTimeout(() => window.location.href = 'http://127.0.0.1:5500/inici.html', 1500);
+		},
+		checkForm: function () {
+			if (this.username) {
+				this.User=new Users(this.username);
+				console.log(this.User.nom);
+				return true;
+			}
+			return false;
 		},
 		buildSopa: function()
 		{
@@ -98,6 +111,7 @@ var wordSearch = Vue.component("WordSearch",{
 		},
 		marcarPalabra:function(pal)
 		{
+			this.User.punts+=1;
 			let nx, ny;
 			for(let l=0;l<pal.p.length;l++)
 			{
@@ -282,6 +296,13 @@ var wordSearch = Vue.component("WordSearch",{
 
     template: `
     <div style="display: flex; justify-content: center; align-items: center; margin-top: 2%;">
+		<p>
+			<label for="username">Username</label>
+			<input id="username" v-on:keyup.enter="actualizarLista" v-model="username" type="text" name="username">
+		</p>
+		<p>
+			<input type="submit" v-on:click="checkForm" value="Enviar">
+		</p>
     <span class="">
         <transition name="slide-fade" appear>
             <div style="display: inline-block;" v-if="!sopaCompletada" class="row m-0 pb-3">
@@ -296,11 +317,13 @@ var wordSearch = Vue.component("WordSearch",{
                     <WordList :palabras="palabrasOk"/>
                 </div>
             </div>
-            <div v-if="sopaCompletada" class="row m-0 pb-3 alert alert-success shrink" role="alert">
-                ENHORABONA!!! HAS COMPLETAT LA SOPA DE LLETRES!!!
+            <div v-if="sopaCompletada" class="row m-0 pb-3 alert alert-secondary animated bounce infinite" role="alert">
+                FELICITATS {{this.username}}!!!
             </div>
         </transition>
     </span>
+	</p>
+	<p style="color:white">  username: {{this.username}} | punts: {{User.punts}}</p>
 </div>
     `
 });

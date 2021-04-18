@@ -25,7 +25,12 @@ var paraules = [
     'cotxe',
     'vaixell',
     'bicicleta',
-    'patata'
+    'patata',
+    "Ubuntu", 
+    "Windows", 
+    "Android",
+    "Estrella"
+
 ];
 
 app.get("/recuperarParaules", (req,res) => {  

@@ -1,3 +1,4 @@
+
 const inici = {template: `
     <inicial></inicial>
 `};
@@ -34,7 +35,7 @@ var home = Vue.component('home', {
     data: function() {
         return {
             rutaActual: window.location.hash,
-            rutes: rutes
+            rutes: rutes,
         };
     },
     methods: {
