@@ -9,4 +9,16 @@ export class Users {
     get _name(){
         return this._name;
     }
+};
+
+export class Imatges {
+    constructor(imagen){
+        this.imagen=imagen;
+    };
+    set _name(newvalue){
+        this._name(newvalue);
+    }
+    get _name(){
+        return this._name;
+    }
 }

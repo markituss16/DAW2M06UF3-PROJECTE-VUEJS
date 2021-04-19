@@ -12,7 +12,6 @@ var wordSearch = Vue.component("WordSearch",{
 			palabras: [],
 			tam: 15,
 			tamax:8,
-			errors: [],
 			username: null,
 			User:Users
 		}

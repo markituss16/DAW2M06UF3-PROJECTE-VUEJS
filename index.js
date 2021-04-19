@@ -1,4 +1,4 @@
-import {Users} from './class/user.js';
+import {Users, Imatges} from './class/user.js';
 import {home} from './components/home.js';
 import {inicial} from './components/inicial.js';
 import {wordSearch} from './components/word-search.js';
